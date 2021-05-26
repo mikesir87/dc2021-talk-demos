@@ -1,0 +1,11 @@
+services:
+  app:
+    image: php:apache
+    ports:
+      - 80:80
+    volumes:
+      - ./:/var/www/html
+    environment:
+      DB_HOST: mysql
+      DB_USER: app_db
+      DB_PASSWORD: superS3cretPassw0rd!

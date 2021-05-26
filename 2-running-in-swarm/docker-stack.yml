@@ -1,0 +1,17 @@
+services:
+  app:
+    image: dc2021:backend
+    ports:
+      - 8080:8080
+    secrets:
+      - source: app_properties
+        target: /app/config/application.properties
+  client:
+    image: dc2021:client
+    ports:
+      - 80:80
+  mongo-db:
+    image: mongo:4.4.5-bionic
+secrets:
+  app_properties:
+    file: ./application.properties

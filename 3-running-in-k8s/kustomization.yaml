@@ -1,0 +1,14 @@
+configMapGenerator:
+  - name: client-config
+    files:
+      - ./config.json
+secretGenerator:
+  - name: backend-config
+    files:
+      - ./application.properties
+resources:
+  - ./deployment-backend.yaml
+  - ./deployment-client.yaml
+  - ./service-backend.yaml
+  - ./service-client.yaml
+  - ./ingress.yaml
